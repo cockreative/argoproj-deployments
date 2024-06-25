@@ -2,6 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: grafana-ingress
+  labels:
+    use-cloudflare-solver: "true"
+    email: "namlehong"
   annotations:
     ingress.kubernetes.io/proxy-body-size: 100M
     ingress.kubernetes.io/app-root: "/"
@@ -9,10 +12,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - grafana.apps.argoproj.io
+    - grafana.cockreative.com
     secretName: grafana-tls
   rules:
-  - host: grafana.apps.argoproj.io
+  - host: grafana.cockreative.com
     http:
       paths:
       - path: /
