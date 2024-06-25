@@ -2,11 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: grafana-ingress
-  labels:
-    use-cloudflare-solver: "true"
-    email: "namlehong"
+  # labels:
+  #   use-cloudflare-solver: "true"
+  #   email: "namlehong"
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    #cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/proxy-body-size: 100M
     ingress.kubernetes.io/app-root: "/"
 spec:
